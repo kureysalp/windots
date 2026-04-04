@@ -17,10 +17,15 @@ $wingetPackages = @(
     @{ Id = "Spicetify.Spicetify";        Name = "Spicetify"    }
     @{ Id = "Microsoft.VisualStudioCode"; Name = "VS Code"      }
     @{ Id = "Microsoft.PowerShell";       Name = "PowerShell 7" }
+    @{ Id = "Chocolatey.Chocolatey";      Name = "Chocolatey"   }
 )
 
 $scoopPackages = @(
     @{ Name = "yazi"; Bucket = "main" }
+)
+
+$chocoPackages = @(
+    "cascadia-code-nerd-font"
 )
 
 # ── Functions ─────────────────────────────────────────────────────────────────
@@ -33,6 +38,17 @@ function Install-WingetPackage {
     } else {
         Write-Host "  Installing $Name..."
         winget install --id $Id --exact --silent --accept-package-agreements --accept-source-agreements
+    }
+}
+
+function Install-ChocoPackage {
+    param([string]$Name)
+    $installed = (choco list --limit-output --id-only).Split("`n")
+    if ($installed -contains $Name) {
+        Write-Host "  [skip] $Name already installed"
+    } else {
+        Write-Host "  Installing $Name..."
+        choco install $Name -y
     }
 }
 
@@ -135,7 +151,15 @@ if (-not (Get-Command scoop -ErrorAction SilentlyContinue)) {
     Invoke-RestMethod https://get.scoop.sh | Invoke-Expression
 }
 
-# 5. Scoop packages
+# 5. Choco packages
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" +
+            [System.Environment]::GetEnvironmentVariable("Path", "User")
+Write-Host "`nInstalling Choco packages...`n"
+foreach ($pkg in $chocoPackages) {
+    Install-ChocoPackage -Name $pkg
+}
+
+# 7. Scoop packages
 Write-Host "`nInstalling Scoop packages...`n"
 foreach ($pkg in $scoopPackages) {
     Install-ScoopPackage -Name $pkg.Name -Bucket $pkg.Bucket
