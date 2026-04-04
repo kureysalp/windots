@@ -2,7 +2,7 @@
 
 This is my personal dotfiles for Windows. Supports automatic installation of dependencies and configurations via symlinks.
 
-[!Windots Overview](Screenshots/Terminal.png)
+[!Windots Overview](/screenshots/Terminal.png)
 
 ## Features
 
@@ -20,8 +20,8 @@ This is my personal dotfiles for Windows. Supports automatic installation of dep
 | [BetterDiscord](./BetterDiscord) | [BetterDiscord](https://github.com/BetterDiscord/BetterDiscord) |
 
 ## Pre-requisites
-[PowerShell 7] (https://learn.microsoft.com/en-us/powershell/scripting/install/install-powershell-on-windows?view=powershell-7.6&viewFallbackFrom=powershell-7.3#install-powershell-using-winget-recommended)
-[Git] (https://git-scm.com/install/windows)
+[PowerShell 7](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3#install-powershell-using-winget-recommended)
+[Git](https://winget.run/pkg/Git/Git)
 
 ## Installation
 
@@ -34,6 +34,6 @@ cd ~/dotfiles
 
 ## Screenshots
 
-[!Terminal](Screenshots/Terminal.png)
-[!Discord_Spotify](Screenshots/Discord_Spotify.png)
+[!Terminal](/screenshots/Terminal.png)
+[!Discord_Spotify](/screenshots/Discord_Spotify.png)
 
