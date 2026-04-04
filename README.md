@@ -2,7 +2,7 @@
 
 This is my personal dotfiles for Windows. Supports automatic installation of dependencies and configurations via symlinks.
 
-[Windots Overview](Screenshots/Terminal.png)
+[!Windots Overview](Screenshots/Terminal.png)
 
 ## Features
 
@@ -34,6 +34,6 @@ cd ~/dotfiles
 
 ## Screenshots
 
-[Terminal](Screenshots/Terminal.png)
-[Discord_Spotify](Screenshots/Discord_Spotify.png)
+[!Terminal](Screenshots/Terminal.png)
+[!Discord_Spotify](Screenshots/Discord_Spotify.png)
 
