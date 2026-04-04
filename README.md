@@ -32,8 +32,7 @@ I'll actively update this repository as long as I keep using windows (cries in g
 Clone the repository and run `install.ps1`
 
 ```powershell
-git clone https://github.com/kureysalp/dotfiles ~/dotfiles
-cd ~/dotfiles
+git clone https://github.com/kureysalp/dotfiles
 ./install.ps1
 ```
 
