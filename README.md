@@ -21,7 +21,7 @@ This is my personal dotfiles for Windows. Supports automatic installation of dep
 
 ## Pre-requisites
 - [PowerShell 7](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3#install-powershell-using-winget-recommended)
-- [Git](https://winget.run/pkg/Git/Git)
+- [Git](https://git-scm.com/install/windows)
 
 ## Installation
 
