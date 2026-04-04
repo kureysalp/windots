@@ -1,0 +1,43 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "alt+`",
+        "command": "editor.action.marker.next",
+        "when": "editorFocus"
+    },
+    {
+        "key": "alt+f8",
+        "command": "-editor.action.marker.next",
+        "when": "editorFocus"
+    },
+    {
+        "key": "alt+`",
+        "command": "editor.action.marker.nextInFiles",
+        "when": "editorFocus"
+    },
+    {
+        "key": "f8",
+        "command": "-editor.action.marker.nextInFiles",
+        "when": "editorFocus"
+    },
+    {
+        "key": "shift+alt+`",
+        "command": "editor.action.marker.prev",
+        "when": "editorFocus"
+    },
+    {
+        "key": "shift+alt+f8",
+        "command": "-editor.action.marker.prev",
+        "when": "editorFocus"
+    },
+    {
+        "key": "shift+alt+`",
+        "command": "editor.action.marker.prevInFiles",
+        "when": "editorFocus"
+    },
+    {
+        "key": "shift+f8",
+        "command": "-editor.action.marker.prevInFiles",
+        "when": "editorFocus"
+    }
+]
