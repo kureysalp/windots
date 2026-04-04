@@ -1,3 +1,23 @@
 {
-    "security.workspace.trust.untrustedFiles": "open"
+    "security.workspace.trust.untrustedFiles": "open",
+    
+    "editor.fontFamily": "CaskaydiaCove Nerd Font",
+    "workbench.colorTheme": "Tokyo Night",
+    "editor.minimap.enabled": false,
+    "editor.cursorBlinking": "solid",
+
+    "workbench.activityBar.location": "hidden",
+    "workbench.layoutControl.enabled": false,
+    "window.controlsStyle": "hidden",
+    "window.menuBarVisibility": "compact",
+    "window.titleBarStyle": "custom",
+    "window.menuStyle": "custom",
+    "window.commandCenter": false,
+    "window.customtitleBarVisibility": "never",
+    "workbench.browser.showInTitleBar": false,
+    "workbench.statusBar.visible": false,
+    "window.customTitleBarVisibility": "never",
+
+    "chat.disableAIFeatures": true,    
+    "window.zoomLevel": 1,
 }

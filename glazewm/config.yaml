@@ -126,12 +126,16 @@ workspaces:
   - name: '3'
   - name: '4'
   - name: '5'
+    display_name: "Gaming"
   - name: '6'
   - name: '7'
   - name: '8'
   - name: '9'
 
 window_rules:
+  - commands: ["move --workspace 5", "set-floating", "set-fullscreen"]
+    match:
+      - window_process: { regex: "CrimsonDesert.exe"}
   - commands: ['ignore']
     match:
       # Ignores any Zebar windows.
@@ -221,8 +225,8 @@ keybindings:
     bindings: ['alt+v']
 
   # Change focus from tiling windows -> floating -> fullscreen.
-  - commands: ['wm-cycle-focus']
-    bindings: ['alt+space']
+  # - commands: ['wm-cycle-focus']
+  #   bindings: ['alt+space']
 
   # Change the focused window to be floating.
   - commands: ['toggle-floating --centered']
