@@ -4,6 +4,10 @@ This is my personal dotfiles for Windows. Supports automatic installation of dep
 
 ![Windots Overview](/screenshots/Terminal.png)
 
+## Overview
+
+I'll actively update this repository as long as I keep using windows (cries in game dev). I have also wrote a script to automate the installation process. It installs all the dependencies (a few doesn't have any package so needs manual installation) and symlinks the config files.
+
 ## Features
 
 | Config | Tool |
@@ -25,15 +29,16 @@ This is my personal dotfiles for Windows. Supports automatic installation of dep
 
 ## Installation
 
+Clone the repository and run `install.ps1`
+
 ```powershell
 git clone https://github.com/kureysalp/dotfiles ~/dotfiles
 cd ~/dotfiles
 ./install.ps1
 ```
 
-
 ## Screenshots
 
 ![Terminal](/screenshots/Terminal.png)
 ![Discord_Spotify](/screenshots/Discord_Spotify.png)
-
+![Vscode](/screenshots/Vscode.png)
