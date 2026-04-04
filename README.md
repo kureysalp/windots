@@ -1,11 +1,8 @@
-# Alp's Personal Windows Dotfiles
-<!-- screenshot -->
+<h1 align="center">Alp's Personal Dotfiles</h1>
 
----
+This is my personal dotfiles for Windows. Supports automatic installation of dependencies and configurations via symlinks.
 
-<!-- introduction -->
-
----
+[Windots Overview](Screenshots/Terminal.png)
 
 ## Features
 
@@ -22,11 +19,11 @@
 | [vscode](./vscode) | [VS Code](https://github.com/microsoft/vscode) |
 | [BetterDiscord](./BetterDiscord) | [BetterDiscord](https://github.com/BetterDiscord/BetterDiscord) |
 
----
+## Pre-requisites
+[PowerShell 7] (https://learn.microsoft.com/en-us/powershell/scripting/install/install-powershell-on-windows?view=powershell-7.6&viewFallbackFrom=powershell-7.3#install-powershell-using-winget-recommended)
+[Git] (https://git-scm.com/install/windows)
 
 ## Installation
-
-> Requires **Developer Mode** enabled: Settings → System → For Developers → Developer Mode: On
 
 ```powershell
 git clone https://github.com/kureysalp/dotfiles ~/dotfiles
@@ -34,12 +31,9 @@ cd ~/dotfiles
 ./install.ps1
 ```
 
-To re-apply symlinks after pulling changes (without reinstalling packages):
-
-```powershell
-./sync.ps1
-```
-
----
 
 ## Screenshots
+
+[Terminal](Screenshots/Terminal.png)
+[Discord_Spotify](Screenshots/Discord_Spotify.png)
+
