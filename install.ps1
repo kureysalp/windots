@@ -1,4 +1,5 @@
 #Requires -Version 7
+#Requires -RunAsAdministrator
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
@@ -18,7 +19,7 @@ $wingetPackages = @(
     @{ Id = "Microsoft.VisualStudioCode"; Name = "VS Code"      }
     @{ Id = "Microsoft.PowerShell";       Name = "PowerShell 7" }
     @{ Id = "Chocolatey.Chocolatey";      Name = "Chocolatey"   }
-    @{ Id = "Flow Launcher";              Name = "Flow Launcher"}
+    @{ Id = "Flow-Launcher.Flow-Launcher"; Name = "Flow Launcher" }
 )
 
 $scoopPackages = @(
@@ -44,13 +45,8 @@ function Install-WingetPackage {
 
 function Install-ChocoPackage {
     param([string]$Name)
-    $installed = (choco list --limit-output --id-only).Split("`n")
-    if ($installed -contains $Name) {
-        Write-Host "  [skip] $Name already installed"
-    } else {
-        Write-Host "  Installing $Name..."
-        choco install $Name -y
-    }
+    Write-Host "  Installing $Name..."
+    choco install $Name -y
 }
 
 function Install-ScoopPackage {
@@ -72,7 +68,8 @@ function Link-File {
         if ($item.LinkType -eq 'SymbolicLink') {
             Remove-Item $Target -Force          # already a symlink → just replace it
         } else {
-            Rename-Item $Target "$Target.bak"   # real file → back it up first
+            if (Test-Path "$Target.bak") { Remove-Item "$Target.bak" -Force }
+            Rename-Item $Target "$Target.bak" -Force   # real file → back it up first
         }
     }
 
@@ -194,8 +191,8 @@ Link-File "$HomeDir/.wezterm.lua" "$Dotfiles/wezterm/.wezterm.lua"
 # Zebar
 Link-File "$HomeDir/.glzr/zebar/settings.json" "$Dotfiles/zebar/settings.json"
 # Flow Launcher
-Link-File "$HomeDir/AppData/Roaming/FlowLauncher/Settings/Settings.json" "$Dotfiles/FlowLauncher/Settings/Settings.json"
-Link-File "$HomeDir/AppData/Roaming/FlowLauncher/Themes/tokyonight.xaml" "$Dotfiles/FlowLauncher/Themes/tokyonight.xaml"
+Link-File "$HomeDir/AppData/Roaming/FlowLauncher/Settings/Settings.json" "$Dotfiles/flowLauncher/Settings/Settings.json"
+Link-File "$HomeDir/AppData/Roaming/FlowLauncher/Themes/tokyonight.xaml" "$Dotfiles/flowLauncher/Themes/tokyonight.xaml"
 
 # ── Manual Steps ──────────────────────────────────────────────────────────────
 

@@ -30,7 +30,7 @@ I'll actively update this repository as long as I keep using windows (cries in g
 
 ## Installation
 
-Clone the repository and run `install.ps1`
+Clone the repository and run `install.ps1` **as Administrator**
 
 ```
 git clone https://github.com/kureysalp/dotfiles
