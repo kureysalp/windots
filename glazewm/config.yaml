@@ -66,7 +66,7 @@ window_effects:
     # Remove the title bar from the window's frame. Note that this can
     # cause rendering issues for some applications.
     hide_title_bar:
-      enabled: false
+      enabled: true
 
     # Change the corner style of the window's frame.
     # ** Exclusive to Windows 11 due to API limitations.
@@ -126,14 +126,13 @@ workspaces:
   - name: '3'
   - name: '4'
   - name: '5'
-    display_name: "Gaming"
   - name: '6'
   - name: '7'
   - name: '8'
   - name: '9'
 
 window_rules:
-  - commands: ["move --workspace 5", "set-floating", "set-fullscreen"]
+  - commands: ["move --workspace 4F", "set-floating", "set-fullscreen"]
     match:
       - window_process: { regex: "CrimsonDesert.exe"}
   - commands: ['ignore']

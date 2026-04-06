@@ -18,6 +18,7 @@ $wingetPackages = @(
     @{ Id = "Microsoft.VisualStudioCode"; Name = "VS Code"      }
     @{ Id = "Microsoft.PowerShell";       Name = "PowerShell 7" }
     @{ Id = "Chocolatey.Chocolatey";      Name = "Chocolatey"   }
+    @{ Id = "Flow Launcher";              Name = "Flow Launcher"}
 )
 
 $scoopPackages = @(
@@ -192,6 +193,9 @@ Link-File "$HomeDir/AppData/Roaming/Code/User/settings.json" "$Dotfiles/vscode/s
 Link-File "$HomeDir/.wezterm.lua" "$Dotfiles/wezterm/.wezterm.lua"
 # Zebar
 Link-File "$HomeDir/.glzr/zebar/settings.json" "$Dotfiles/zebar/settings.json"
+# Flow Launcher
+Link-File "$HomeDir/AppData/Roaming/FlowLauncher/Settings/Settings.json" "$Dotfiles/FlowLauncher/Settings/Settings.json"
+Link-File "$HomeDir/AppData/Roaming/FlowLauncher/Themes/tokyonight.xaml" "$Dotfiles/FlowLauncher/Themes/tokyonight.xaml"
 
 # ── Manual Steps ──────────────────────────────────────────────────────────────
 
