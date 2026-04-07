@@ -53,10 +53,10 @@
   "TimeFormat": "HH:mm",
   "DateFormat": "dd.MM.yy",
   "FirstLaunch": false,
-  "SettingWindowWidth": 1000,
-  "SettingWindowHeight": 700,
-  "SettingWindowTop": 203,
-  "SettingWindowLeft": 460,
+  "SettingWindowWidth": 1910,
+  "SettingWindowHeight": 1044,
+  "SettingWindowTop": 31,
+  "SettingWindowLeft": 5,
   "SettingWindowState": 0,
   "ShowPlaceholder": true,
   "PlaceholderText": "",
@@ -156,7 +156,7 @@
   "CustomWindowTop": 0,
   "KeepMaxResults": false,
   "MaxResultsToShow": 5,
-  "ActivateTimes": 6,
+  "ActivateTimes": 116,
   "CustomPluginHotkeys": [],
   "CustomShortcuts": [],
   "DontPromptUpdateMsg": false,
@@ -351,6 +351,54 @@
         "Version": "2.1.1",
         "ActionKeywords": [
           "s"
+        ],
+        "Priority": 0,
+        "SearchDelayTime": null,
+        "Disabled": false,
+        "HomeDisabled": false
+      },
+      "4D5DF575E4964C6AAADCF86134F09CC0": {
+        "ID": "4D5DF575E4964C6AAADCF86134F09CC0",
+        "Name": "Steam Search",
+        "Version": "9.0.1",
+        "ActionKeywords": [
+          "st"
+        ],
+        "Priority": 0,
+        "SearchDelayTime": null,
+        "Disabled": false,
+        "HomeDisabled": false
+      },
+      "C04175CF5284406DAA9E30A85EC7DA76": {
+        "ID": "C04175CF5284406DAA9E30A85EC7DA76",
+        "Name": "Audio Device Selector",
+        "Version": "1.0.3",
+        "ActionKeywords": [
+          "ad"
+        ],
+        "Priority": 0,
+        "SearchDelayTime": null,
+        "Disabled": false,
+        "HomeDisabled": false
+      },
+      "70CED0AC-3D9D-4255-AD0B-D9A37862E879": {
+        "ID": "70CED0AC-3D9D-4255-AD0B-D9A37862E879",
+        "Name": "AnyVideo Downloader",
+        "Version": "2.4.0",
+        "ActionKeywords": [
+          "vd"
+        ],
+        "Priority": 0,
+        "SearchDelayTime": null,
+        "Disabled": false,
+        "HomeDisabled": false
+      },
+      "dd2fd217-e332-4fbd-9012-4940e08d41a7": {
+        "ID": "dd2fd217-e332-4fbd-9012-4940e08d41a7",
+        "Name": "Uninstaller\u002B",
+        "Version": "2.0.5",
+        "ActionKeywords": [
+          "uni"
         ],
         "Priority": 0,
         "SearchDelayTime": null,

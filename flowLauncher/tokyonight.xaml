@@ -10,7 +10,6 @@
     <Style x:Key="QueryBoxStyle" BasedOn="{StaticResource BaseQueryBoxStyle}" TargetType="{x:Type TextBox}">
         <Setter Property="SelectionBrush" Value="#f7768e"/>
         <Setter Property="FontSize" Value="24" />
-        <Setter Property="Background" Value="#1a1b2c" />
         <Setter Property="Foreground" Value="#a9b1dc" />
         <Setter Property="CaretBrush" Value="#e0af68" />
         <Setter Property="FontSize" Value="26" />
@@ -18,7 +17,6 @@
         <Setter Property="Height" Value="42" />
     </Style>
     <Style x:Key="QuerySuggestionBoxStyle" BasedOn="{StaticResource BaseQuerySuggestionBoxStyle}" TargetType="{x:Type TextBox}">
-        <Setter Property="Background" Value="#1a1b2c" />
         <Setter Property="Foreground" Value="#414868" />
         <Setter Property="FontSize" Value="26" />
         <Setter Property="Padding" Value="0 4 66 0" />
@@ -28,7 +26,11 @@
         <Setter Property="BorderThickness" Value="2" />
         <Setter Property="BorderBrush" Value="#414868" />
         <Setter Property="CornerRadius" Value="5" />
-        <Setter Property="Background" Value="#1a1b2c" />
+        <Setter Property="Background">
+            <Setter.Value>
+                <SolidColorBrush Opacity="0.8" Color="#1a1b2c" />
+            </Setter.Value>
+        </Setter>
     </Style>
     <Style x:Key="WindowStyle" BasedOn="{StaticResource BaseWindowStyle}" TargetType="{x:Type Window}">
         <Setter Property="Width" Value="576" />
@@ -57,7 +59,7 @@
         <Setter Property="Cursor" Value="Arrow" />
         <Setter Property="Foreground" Value="#73daca" />
     </Style>
-    <SolidColorBrush x:Key="ItemSelectedBackgroundColor">#28344a</SolidColorBrush>
+    <SolidColorBrush x:Key="ItemSelectedBackgroundColor" Opacity="0.6" Color="#28344a"/>
     <Style x:Key="ItemImageSelectedStyle" BasedOn="{StaticResource BaseItemImageSelectedStyle}" TargetType="{x:Type Image}" >
         <Setter Property="Cursor" Value="Arrow" />
     </Style>
