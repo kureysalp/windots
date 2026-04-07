@@ -190,9 +190,9 @@ Link-File "$HomeDir/AppData/Roaming/Code/User/settings.json" "$Dotfiles/vscode/s
 Link-File "$HomeDir/.wezterm.lua" "$Dotfiles/wezterm/.wezterm.lua"
 # Zebar
 Link-File "$HomeDir/.glzr/zebar/settings.json" "$Dotfiles/zebar/settings.json"
-# Flow Launcher
-Link-File "$HomeDir/AppData/Roaming/FlowLauncher/Settings/Settings.json" "$Dotfiles/flowLauncher/Settings/Settings.json"
-Link-File "$HomeDir/AppData/Roaming/FlowLauncher/Themes/tokyonight.xaml" "$Dotfiles/flowLauncher/Themes/tokyonight.xaml"
+# Flow Launcher.
+Link-File "$HomeDir/AppData/Roaming/FlowLauncher/Settings/Settings.json" "$Dotfiles/flowLauncher/Settings.json"
+Link-File "$HomeDir/AppData/Roaming/FlowLauncher/Themes/tokyonight.xaml" "$Dotfiles/flowLauncher/tokyonight.xaml"
 
 # ── Manual Steps ──────────────────────────────────────────────────────────────
 
