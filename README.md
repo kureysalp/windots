@@ -42,3 +42,4 @@ git clone https://github.com/kureysalp/dotfiles
 ![Terminal](/screenshots/Terminal.png)
 ![Discord_Spotify](/screenshots/Discord_Spotify.png)
 ![Vscode](/screenshots/Vscode.png)
+![Flow_Launcher](/screenshots/FlowLauncher.png)
