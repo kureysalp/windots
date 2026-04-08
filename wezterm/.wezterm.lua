@@ -40,5 +40,14 @@ config.cursor_blink_rate = 500
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 
+config.keys = {
+  { key = 'V', mods = 'CTRL', action = wezterm.action.PasteFrom 'Clipboard' },
+  { key = 'C', mods = 'CTRL', action = wezterm.action.CopyTo 'Clipboard' },
+  { key = 'UpArrow', mods = 'SHIFT', action = wezterm.action.ScrollByLine(-1) },
+  { key = 'DownArrow', mods = 'SHIFT', action = wezterm.action.ScrollByLine(1) },
+  { key = 'PageUp', mods = 'SHIFT', action = wezterm.action.ScrollByPage(-1) },
+  { key = 'PageDown', mods = 'SHIFT', action = wezterm.action.ScrollByPage(1) },
+}
+
 -- Finally, return the configuration to wezterm:
 return config
