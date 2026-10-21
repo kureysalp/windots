@@ -35,7 +35,8 @@ config.front_end = "OpenGL"
 config.max_fps = 144
 config.default_cursor_style = "BlinkingBlock"
 config.animation_fps = 1
-config.cursor_blink_rate = 500 
+config.cursor_blink_rate = 500
+config.enable_kitty_graphics = true
 
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true

@@ -22,7 +22,7 @@
   "Language": "system",
   "Theme": "tokyonight",
   "UseDropShadowEffect": true,
-  "BackdropType": 1,
+  "BackdropType": 0,
   "ReleaseNotesVersion": "2.1.1",
   "WindowHeightSize": 42,
   "ItemHeightSize": 58,
@@ -43,20 +43,20 @@
   "ResultSubFontStretch": null,
   "UseGlyphIcons": true,
   "UseAnimation": true,
-  "UseSound": false,
+  "UseSound": true,
   "SoundVolume": 50,
   "ShowBadges": false,
   "ShowBadgesGlobalOnly": false,
   "SettingWindowFont": "Segoe UI",
   "UseClock": true,
   "UseDate": false,
-  "TimeFormat": "HH:mm",
-  "DateFormat": "dd.MM.yy",
+  "TimeFormat": "hh:mm tt",
+  "DateFormat": "MM\u0027/\u0027dd ddd",
   "FirstLaunch": false,
-  "SettingWindowWidth": 1910,
-  "SettingWindowHeight": 1044,
+  "SettingWindowWidth": 847,
+  "SettingWindowHeight": 1404,
   "SettingWindowTop": 31,
-  "SettingWindowLeft": 5,
+  "SettingWindowLeft": 857,
   "SettingWindowState": 0,
   "ShowPlaceholder": true,
   "PlaceholderText": "",
@@ -146,8 +146,8 @@
   "AlwaysStartEn": false,
   "QuerySearchPrecision": "Regular",
   "AutoUpdates": false,
-  "WindowLeft": 670,
-  "WindowTop": 279,
+  "WindowLeft": 990,
+  "WindowTop": 369,
   "PreviousScreenWidth": 0,
   "PreviousScreenHeight": 0,
   "PreviousDpiX": 0,
@@ -156,7 +156,7 @@
   "CustomWindowTop": 0,
   "KeepMaxResults": false,
   "MaxResultsToShow": 5,
-  "ActivateTimes": 116,
+  "ActivateTimes": 1877,
   "CustomPluginHotkeys": [],
   "CustomShortcuts": [],
   "DontPromptUpdateMsg": false,
@@ -168,7 +168,7 @@
   "LeaveCmdOpen": false,
   "HideWhenDeactivated": true,
   "ShowTaskbarWhenInvoked": false,
-  "ShowAtTopmost": true,
+  "ShowAtTopmost": false,
   "SearchQueryResultsWithDelay": false,
   "SearchDelayTime": 150,
   "SearchWindowScreen": "Cursor",
@@ -186,8 +186,8 @@
   "AnimationSpeed": "Medium",
   "CustomAnimationLength": 360,
   "PluginSettings": {
-    "PythonExecutablePath": "C:\\Users\\Alp\\AppData\\Local\\Programs\\Python\\Python314\\pythonw.exe",
-    "NodeExecutablePath": "C:\\Users\\Alp\\AppData\\Local\\nvm\\v25.2.1\\node.exe",
+    "PythonExecutablePath": "C:\\Users\\KintaroGames3\\AppData\\Local\\Python\\bin\\pythonw.exe",
+    "NodeExecutablePath": "",
     "Plugins": {
       "0ECADE17459B49F587BF81DC3A125110": {
         "ID": "0ECADE17459B49F587BF81DC3A125110",
@@ -357,48 +357,36 @@
         "Disabled": false,
         "HomeDisabled": false
       },
-      "4D5DF575E4964C6AAADCF86134F09CC0": {
-        "ID": "4D5DF575E4964C6AAADCF86134F09CC0",
-        "Name": "Steam Search",
-        "Version": "9.0.1",
+      "47CB5139-693C-4CEA-9ED7-D18EC4926FFC": {
+        "ID": "47CB5139-693C-4CEA-9ED7-D18EC4926FFC",
+        "Name": "Claude",
+        "Version": "1.0.1",
         "ActionKeywords": [
-          "st"
+          "cla"
         ],
         "Priority": 0,
         "SearchDelayTime": null,
         "Disabled": false,
         "HomeDisabled": false
       },
-      "C04175CF5284406DAA9E30A85EC7DA76": {
-        "ID": "C04175CF5284406DAA9E30A85EC7DA76",
-        "Name": "Audio Device Selector",
-        "Version": "1.0.3",
+      "ff9385ec-0e95-452f-bef2-62456f66fe0f": {
+        "ID": "ff9385ec-0e95-452f-bef2-62456f66fe0f",
+        "Name": "Clipboard\u002B",
+        "Version": "3.1.1",
         "ActionKeywords": [
-          "ad"
+          "cbp"
         ],
         "Priority": 0,
         "SearchDelayTime": null,
         "Disabled": false,
         "HomeDisabled": false
       },
-      "70CED0AC-3D9D-4255-AD0B-D9A37862E879": {
-        "ID": "70CED0AC-3D9D-4255-AD0B-D9A37862E879",
-        "Name": "AnyVideo Downloader",
-        "Version": "2.4.0",
+      "18892B7863AC43ABA27859A5A2866DD8": {
+        "ID": "18892B7863AC43ABA27859A5A2866DD8",
+        "Name": "Currency Converter",
+        "Version": "2.0.6",
         "ActionKeywords": [
-          "vd"
-        ],
-        "Priority": 0,
-        "SearchDelayTime": null,
-        "Disabled": false,
-        "HomeDisabled": false
-      },
-      "dd2fd217-e332-4fbd-9012-4940e08d41a7": {
-        "ID": "dd2fd217-e332-4fbd-9012-4940e08d41a7",
-        "Name": "Uninstaller\u002B",
-        "Version": "2.0.5",
-        "ActionKeywords": [
-          "uni"
+          "cc"
         ],
         "Priority": 0,
         "SearchDelayTime": null,
