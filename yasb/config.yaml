@@ -114,6 +114,10 @@ widgets:
       thumbnail_alpha: 250
       thumbnail_padding: 8
       thumbnail_corner_radius: 0
+      # Open the popup under the widget's left edge instead of right-aligning it,
+      # which pushed it against the screen edge.
+      media_menu:
+        alignment: "left"
       icons:
         prev_track: ""
         next_track: ""
