@@ -167,8 +167,8 @@ foreach ($pkg in $scoopPackages) {
 
 Write-Host "`nCreating symlinks...`n"
 
-# BetterDiscord
-Link-Dir "$HomeDir/AppData/Roaming/BetterDiscord/themes" "$Dotfiles/BetterDiscord/themes"
+# Vencord
+Link-Dir "$HomeDir/AppData/Roaming/Vencord/themes" "$Dotfiles/Vencord/themes"
 # FastFetch
 Link-Dir "$HomeDir/.config/fastfetch" "$Dotfiles/fastfetch"
 # GlazeWM
@@ -203,7 +203,7 @@ Write-Host "│                           ✓  Setup complete!                  
 Write-Host "│                                                                                │" -ForegroundColor Green
 Write-Host "│   Manual steps required:                                                       │" -ForegroundColor Yellow
 Write-Host "│                                                                                │" -ForegroundColor Yellow
-Write-Host "│   1. BetterDiscord   https://betterdiscord.app/Download                        │" -ForegroundColor Yellow
+Write-Host "│   1. Vencord   https://github.com/Vendicated/Vencord                        │" -ForegroundColor Yellow
 Write-Host "│   2. Tacky Borders   https://github.com/lukeyou05/tacky-borders/releases       │" -ForegroundColor Yellow
 Write-Host "│                                                                                │" -ForegroundColor Yellow
 Write-Host "└────────────────────────────────────────────────────────────────────────────────┘" -ForegroundColor Yellow

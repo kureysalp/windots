@@ -22,7 +22,7 @@ I'll actively update this repository as long as I keep using windows (cries in g
 | [spicetify](./spicetify) | [Spicetify](https://github.com/spicetify/spicetify-cli) |
 | [tacky-borders](./tacky-borders) | [Tacky Borders](https://github.com/lukeyou05/tacky-borders) |
 | [vscode](./vscode) | [VS Code](https://github.com/microsoft/vscode) |
-| [BetterDiscord](./BetterDiscord) | [BetterDiscord](https://github.com/BetterDiscord/BetterDiscord) |
+| [Vencord](./Vencord) | [Vencord](https://github.com/Vendicated/Vencord) |
 
 ## Pre-requisites
 - [PowerShell 7](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3#install-powershell-using-winget-recommended)

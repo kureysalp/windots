@@ -53,10 +53,10 @@
   "TimeFormat": "hh:mm tt",
   "DateFormat": "MM\u0027/\u0027dd ddd",
   "FirstLaunch": false,
-  "SettingWindowWidth": 847,
-  "SettingWindowHeight": 1404,
-  "SettingWindowTop": 31,
-  "SettingWindowLeft": 857,
+  "SettingWindowWidth": 1900,
+  "SettingWindowHeight": 1034,
+  "SettingWindowTop": 36,
+  "SettingWindowLeft": 10,
   "SettingWindowState": 0,
   "ShowPlaceholder": true,
   "PlaceholderText": "",
@@ -156,7 +156,7 @@
   "CustomWindowTop": 0,
   "KeepMaxResults": false,
   "MaxResultsToShow": 5,
-  "ActivateTimes": 1877,
+  "ActivateTimes": 457,
   "CustomPluginHotkeys": [],
   "CustomShortcuts": [],
   "DontPromptUpdateMsg": false,
@@ -387,6 +387,18 @@
         "Version": "2.0.6",
         "ActionKeywords": [
           "cc"
+        ],
+        "Priority": 0,
+        "SearchDelayTime": null,
+        "Disabled": false,
+        "HomeDisabled": false
+      },
+      "47CB5139-693C-4CEA-9ED7-D18EC4926FFC": {
+        "ID": "47CB5139-693C-4CEA-9ED7-D18EC4926FFC",
+        "Name": "Claude",
+        "Version": "1.0.1",
+        "ActionKeywords": [
+          "cla"
         ],
         "Priority": 0,
         "SearchDelayTime": null,
