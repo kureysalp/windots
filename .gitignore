@@ -3,3 +3,4 @@
 yasb/.env
 yasb/dumps/
 yasb/*.bak
+yasb/yasb.log.*

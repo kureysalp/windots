@@ -444,3 +444,269 @@ Example: "Windows Media" becomes "windows-media" */
     color: rgb(255, 255, 255);
     margin-top: -20px;
 }
+
+/* CONTROL CENTER */
+/* Based on the wiki example, recoloured to the Catppuccin palette.
+   https://github.com/amnweb/yasb/wiki/(Widget)-Control-Center */
+.control-center-menu {
+    background-color: rgba(30, 30, 46, 0.6);
+    min-width: 360px;
+}
+/* 12px side padding + 4px button margin = 16px, same as the other sections */
+.control-center-menu .section {
+    background: transparent;
+    margin: 0;
+    padding: 16px 12px;
+    border-bottom: 1px solid #313244;
+}
+.control-center-menu .section.system-controls {
+    padding: 12px 16px 0 16px;
+}
+.control-center-menu .section.sliders {
+    padding: 16px;
+}
+.control-center-menu .section.media,
+.control-center-menu .section.power,
+.control-center-menu .section.system-controls {
+    border-bottom: none;
+}
+
+/* The default popup icons are Segoe Fluent Icons glyphs */
+.control-center-menu .section.system-controls .button,
+.control-center-menu .section.quick-actions .button .icon,
+.control-center-menu .section.sliders .slider .icon,
+.control-center-menu .section.sliders .slider .source-selector,
+.control-center-menu .section.power .plan-name .icon,
+.control-center-menu .section.power .mode-name .icon,
+.control-center-menu .section.media .button {
+    font-family: "Segoe Fluent Icons";
+    font-weight: 400;
+}
+.control-center-menu .section.system-controls .button:pressed,
+.control-center-menu .section.quick-actions .button .icon:pressed,
+.control-center-menu .section.sliders .slider .source-selector:pressed,
+.control-center-menu .section.power .plan-name:pressed,
+.control-center-menu .section.power .mode-name:pressed,
+.control-center-menu .section.media .button:pressed {
+    opacity: 0.5;
+}
+.control-center-menu .section.quick-actions .button.disabled .title,
+.control-center-menu .section.quick-actions .button.disabled .icon,
+.control-center-menu .section.sliders .slider.disabled,
+.control-center-menu .section.media .button.disabled {
+    opacity: 0.5;
+}
+
+/* Profile picture, lock, settings and power buttons */
+.control-center-menu .section.system-controls .button {
+    background-color: #313244;
+    border-radius: 16px;
+    min-height: 32px;
+    max-height: 32px;
+    min-width: 32px;
+    max-width: 32px;
+    font-size: 14px;
+    color: #cdd6f4;
+}
+.control-center-menu .section.system-controls .button:hover {
+    background-color: #45475a;
+}
+
+/* Quick actions grid */
+.control-center-menu .section.quick-actions .button {
+    margin: 0 4px;
+}
+.control-center-menu .section.quick-actions .button .icon {
+    font-size: 16px;
+    background-color: rgba(49, 50, 68, 0.6);
+    border: 1px solid #313244;
+    min-height: 48px;
+    border-radius: 6px;
+    color: #cdd6f4;
+}
+.control-center-menu .section.quick-actions .button .icon:hover {
+    background-color: #45475a;
+    border: 1px solid #45475a;
+}
+.control-center-menu .section.quick-actions .button.active .icon {
+    background-color: #89b4fa;
+    border: 1px solid #89b4fa;
+    color: #1e1e2e;
+}
+.control-center-menu .section.quick-actions .button.active .icon:hover {
+    background-color: #b4befe;
+    border: 1px solid #b4befe;
+}
+.control-center-menu .section.quick-actions .button.disabled .icon:hover {
+    background-color: rgba(49, 50, 68, 0.6);
+    border: 1px solid #313244;
+}
+.control-center-menu .section.quick-actions .button .title {
+    font-size: 11px;
+    margin: 4px 0 8px 0;
+    font-weight: 600;
+    color: #cdd6f4;
+}
+
+/* Brightness, volume and microphone sliders */
+.control-center-menu .section.sliders .slider {
+    background: transparent;
+    border: none;
+    min-height: 34px;
+    margin: 0 4px;
+}
+.control-center-menu .section.sliders .slider .icon {
+    font-size: 16px;
+    color: #89b4fa;
+    min-width: 36px;
+}
+.control-center-menu .section.sliders .slider .value {
+    min-width: 36px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #cdd6f4;
+}
+.control-center-menu .section.sliders .slider .source-selector {
+    font-size: 12px;
+    color: #a6adc8;
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    background-color: transparent;
+    margin-left: 4px;
+}
+.control-center-menu .section.sliders .slider .source-selector:hover {
+    background-color: #313244;
+}
+
+/* Power plan and power mode */
+.control-center-menu .section.power .plan-name,
+.control-center-menu .section.power .mode-name {
+    background-color: rgba(49, 50, 68, 0.6);
+    border: 1px solid #313244;
+    border-radius: 6px;
+    min-height: 36px;
+    margin: 0 4px;
+    padding: 6px 10px;
+}
+.control-center-menu .section.power .plan-name:hover,
+.control-center-menu .section.power .mode-name:hover {
+    background-color: #45475a;
+}
+.control-center-menu .section.power .mode-name.disabled,
+.control-center-menu .section.power .mode-name.disabled:hover {
+    opacity: 0.5;
+    background-color: rgba(49, 50, 68, 0.6);
+}
+.control-center-menu .section.power .plan-name .title,
+.control-center-menu .section.power .mode-name .title {
+    font-size: 11px;
+    font-weight: 600;
+    color: #6c7086;
+}
+.control-center-menu .section.power .plan-name .subtext,
+.control-center-menu .section.power .mode-name .subtext {
+    font-size: 13px;
+    font-weight: 600;
+    color: #cdd6f4;
+}
+.control-center-menu .section.power .plan-name .icon,
+.control-center-menu .section.power .mode-name .icon {
+    font-size: 14px;
+    color: #6c7086;
+}
+
+/* Now playing */
+.control-center-menu .section.media {
+    background-color: rgba(17, 17, 27, 0.4);
+    padding: 12px;
+    border-top: 1px solid #313244;
+}
+.control-center-menu .section.media .track-info {
+    padding-left: 8px;
+}
+.control-center-menu .section.media .title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #cdd6f4;
+}
+.control-center-menu .section.media .subtext {
+    font-size: 12px;
+    font-weight: 600;
+    color: #6c7086;
+}
+.control-center-menu .section.media .button {
+    font-size: 14px;
+    background-color: transparent;
+    min-width: 32px;
+    min-height: 32px;
+    max-width: 32px;
+    max-height: 32px;
+    border-radius: 6px;
+    margin: 0 0 0 4px;
+}
+.control-center-menu .section.media .button:hover {
+    background-color: #313244;
+}
+.control-center-menu .section.media .button.disabled,
+.control-center-menu .section.media .button.disabled:hover {
+    background-color: transparent;
+}
+
+/* Volume mixer: click the speaker icon next to the volume slider.
+   The dropdown itself uses the .context-menu style above. */
+.control-center-menu .app-mixer .app-volume {
+    padding: 6px 8px 6px 0;
+}
+.control-center-menu .app-mixer .app-icon {
+    min-width: 36px;
+    max-width: 36px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #a6adc8;
+}
+.control-center-menu .app-mixer .app-icon.system {
+    font-family: "Segoe Fluent Icons";
+    font-weight: 400;
+    font-size: 16px;
+    color: #89b4fa;
+}
+.control-center-menu .app-mixer .app-volume.muted .app-icon.system {
+    color: #6c7086;
+}
+.control-center-menu .app-mixer .app-name {
+    font-size: 11px;
+    font-weight: 600;
+    color: #a6adc8;
+}
+.control-center-menu .app-mixer .app-volume.muted .app-name,
+.control-center-menu .app-mixer .app-volume.muted .value {
+    color: #6c7086;
+}
+.control-center-menu .app-mixer .value {
+    min-width: 36px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #cdd6f4;
+}
+.control-center-menu .app-mixer .empty {
+    padding: 8px 12px;
+    color: #6c7086;
+}
+
+/* Dropdowns inside the popup reuse the global .context-menu style;
+   these add the marker next to the selected device / power plan. */
+.control-center-menu .context-menu::indicator:unchecked {
+    width: 4px;
+    height: 12px;
+    margin-left: 0;
+    color: transparent;
+    background-color: transparent;
+}
+.control-center-menu .context-menu::indicator:checked {
+    width: 4px;
+    height: 12px;
+    margin-left: 0;
+    border-radius: 2px;
+    background-color: #89b4fa;
+}

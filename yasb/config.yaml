@@ -46,18 +46,19 @@ bars:
     widgets:
       left: [
         "glazewm_tiling_direction",
-        "glazewm_workspaces"
+        "glazewm_workspaces",
+        "media"
       ]
       center: [
         "clock"
       ]
       right: [
-        "media",
         "open_meteo",
         "microphone",
         "volume",
         "cpu",
         "memory",
+        "control_center",
         "wallpapers",
         "power_menu"
       ]
@@ -248,6 +249,50 @@ widgets:
         - "▆" # 60%
         - "▇" # 70%
         - "█" # 80%+
+
+  # https://github.com/amnweb/yasb/wiki/(Widget)-Control-Center
+  # Popup icons default to Segoe Fluent Icons (set in styles.css), the bar
+  # icon uses the Nerd Font like the rest of the bar.
+  control_center:
+    type: "yasb.control_center.ControlCenterWidget"
+    options:
+      # nf-fa-sliders
+      label: "<span></span>"
+      label_alt: "<span></span>"
+      tooltip: true
+      popup:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+      # Sections left out of this list are hidden.
+      sections_order:
+        - "system_controls"
+        - "quick_actions"
+        - "sliders"
+        - "power"
+        - "media"
+      sections:
+        quick_actions:
+          columns: 3
+          label_position: "default"
+        sliders:
+          volume:
+            icon: ""
+            show_source_selector: true
+          microphone:
+            icon: ""
+            show_source_selector: true
+        media:
+          thumbnail_size: 48
+          thumbnail_radius: 6
+      callbacks:
+        on_left: "toggle_menu"
+        on_middle: "do_nothing"
+        on_right: "do_nothing"
 
   # Left click opens the gallery, right click picks a random wallpaper.
   wallpapers:
