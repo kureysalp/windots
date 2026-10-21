@@ -1,0 +1,285 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/amnweb/yasb/main/schema.json
+
+# Port of SleepyCatHey's YASB config to YASB v2.0.7.
+# https://github.com/SleepyCatHey/Yasb-GlazeWM-Config/tree/main/YASB
+# For more information, visit https://github.com/amnweb/yasb/wiki
+
+watch_stylesheet: true
+watch_config: true
+debug: false
+update_check: true
+
+# Adds a GlazeWM submenu to the YASB tray icon.
+glazewm:
+  start_command: "glazewm.exe start"
+  stop_command: "glazewm.exe command wm-exit"
+  reload_command: "glazewm.exe command wm-reload-config"
+
+bars:
+  primary-bar:
+    enabled: true
+    screens: ["*"]
+    class_name: "yasb-bar"
+    alignment:
+      position: "top"
+      align: "center"
+    animation:
+      enabled: true
+      duration: 1000
+    blur_effect:
+      enabled: true
+      dark_mode: true
+      round_corners: true
+      round_corners_type: "normal"
+      border_color: "System"
+    window_flags:
+      always_on_top: false
+      windows_app_bar: true
+    dimensions:
+      width: "100%"
+      height: 32
+    padding:
+      top: 6
+      left: 6
+      bottom: 0
+      right: 6
+    widgets:
+      left: [
+        "glazewm_tiling_direction",
+        "glazewm_workspaces"
+      ]
+      center: [
+        "clock"
+      ]
+      right: [
+        "media",
+        "open_meteo",
+        "microphone",
+        "volume",
+        "cpu",
+        "memory",
+        "wallpapers",
+        "power_menu"
+      ]
+
+widgets:
+  # https://github.com/amnweb/yasb/wiki/(Widget)-GlazeWM-Tiling-Direction
+  glazewm_tiling_direction:
+    type: "glazewm.tiling_direction.GlazewmTilingDirectionWidget"
+    options:
+      horizontal_label: "󰓡"
+      vertical_label: "󰓢"
+
+  # https://github.com/amnweb/yasb/wiki/(Widget)-GlazeWM-Workspaces
+  glazewm_workspaces:
+    type: "glazewm.workspaces.GlazewmWorkspacesWidget"
+    options:
+      offline_label: "GlazeWM Offline"
+      hide_if_offline: true
+      # No *_label options set, so buttons show the GlazeWM workspace
+      # display_name, falling back to its name ("1", "2", ...).
+      # Each monitor's bar shows only that monitor's workspaces.
+      monitor_exclusive: true
+      glazewm_server_uri: "ws://localhost:6123"
+      enable_scroll_switching: true
+      reverse_scroll_direction: true
+
+  clock:
+    type: "yasb.clock.ClockWidget"
+    options:
+      # Day/Month NameOfDay Clock, e.g. 21/10 Wednesday 17:05
+      label: "{%d/%m %A %H:%M}"
+      label_alt: "{%d/%m %A %H:%M}"
+      timezones: []
+      callbacks:
+        on_left: "toggle_calendar"
+
+  media:
+    type: "yasb.media.MediaWidget"
+    options:
+      label: "<span></span> {title}"
+      label_alt: "<span></span> {artist}"
+      callbacks:
+        on_left: "toggle_media_menu"
+        on_middle: "do_nothing"
+        on_right: "do_nothing"
+      max_field_size:
+        label: 50
+        label_alt: 24
+      show_thumbnail: false
+      controls_only: false
+      controls_left: true
+      hide_empty: true
+      thumbnail_alpha: 250
+      thumbnail_padding: 8
+      thumbnail_corner_radius: 0
+      icons:
+        prev_track: ""
+        next_track: ""
+        play: ""
+        pause: ""
+
+  # Replaces the weatherapi.com widget: no API key needed. Click it once to
+  # search for your city; the location is saved in %LOCALAPPDATA%/YASB/weather.json.
+  open_meteo:
+    type: "yasb.open_meteo.OpenMeteoWidget"
+    options:
+      label: "<span>{icon}</span> {temp}"
+      label_alt: "{location}: Min {min_temp}, Max {max_temp}, Humidity {humidity}"
+      tooltip: true
+      update_interval: 600
+      hide_decimal: true
+      units: "metric"
+      callbacks:
+        on_left: "toggle_card"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
+      icons:
+        sunnyDay: ""
+        clearNight: ""
+        cloudyDay: ""
+        cloudyNight: ""
+        drizzleDay: ""
+        drizzleNight: ""
+        rainyDay: ""
+        rainyNight: ""
+        snowyDay: ""
+        snowyNight: ""
+        foggyDay: ""
+        foggyNight: ""
+        thunderstormDay: ""
+        thunderstormNight: ""
+        default: ""
+      weather_card:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "right"
+        direction: "down"
+        icon_size: 64
+        show_hourly_forecast: true
+        time_format: "12h"
+        hourly_point_spacing: 76
+        hourly_icon_size: 32
+        icon_smoothing: true
+        temp_line_width: 2
+        current_line_color: "#8EAEE8"
+        current_line_width: 1
+        current_line_style: "dot"
+
+  microphone:
+    type: "yasb.microphone.MicrophoneWidget"
+    options:
+      label: "<span>{icon}</span> {level}"
+      label_alt: "<span>{icon}</span> {level}%"
+      icons:
+        normal: "󰍬"
+        muted: "󰍭"
+      callbacks:
+        on_left: "toggle_mute"
+        on_middle: "toggle_label"
+        on_right: "exec cmd.exe /c start ms-settings:sound"
+
+  volume:
+    type: "yasb.volume.VolumeWidget"
+    options:
+      label: "<span>{icon}</span> {level}"
+      label_alt: "{volume}"
+      # {level} shows this text while muted; empty leaves only the icon.
+      mute_text: ""
+      tooltip: false
+      icons:
+        muted: ""
+        "10": ""
+        "30": ""
+        "60": ""
+        "100": ""
+      callbacks:
+        on_left: "toggle_mute"
+        on_right: "exec cmd.exe /c start ms-settings:sound"
+
+  cpu:
+    type: "yasb.cpu.CpuWidget"
+    options:
+      label: "<span></span> {info[percent][total]}"
+      label_alt: "<span></span> {info[histograms][cpu_percent]}"
+      update_interval: 2000
+      cpu_thresholds:
+        low: 25
+        medium: 50
+        high: 90
+      histogram_icons:
+        - "▁" # 0%
+        - "▁" # 10%
+        - "▂" # 20%
+        - "▃" # 30%
+        - "▄" # 40%
+        - "▅" # 50%
+        - "▆" # 60%
+        - "▇" # 70%
+        - "█" # 80%+
+      histogram_num_columns: 8
+      callbacks:
+        on_right: "exec cmd /c Taskmgr"
+
+  memory:
+    type: "yasb.memory.MemoryWidget"
+    options:
+      # nf-fa-memory. Pick others at https://www.nerdfonts.com/cheat-sheet
+      label: "<span></span> {virtual_mem_percent}"
+      label_alt: "<span></span> VIRT: {virtual_mem_percent}% SWAP: {swap_mem_percent}%"
+      update_interval: 5000
+      callbacks:
+        on_left: "toggle_label"
+        on_middle: "do_nothing"
+        on_right: "do_nothing"
+      memory_thresholds:
+        low: 25
+        medium: 50
+        high: 90
+      histogram_icons:
+        - "▁" # 0%
+        - "▁" # 10%
+        - "▂" # 20%
+        - "▃" # 30%
+        - "▄" # 40%
+        - "▅" # 50%
+        - "▆" # 60%
+        - "▇" # 70%
+        - "█" # 80%+
+
+  # Left click opens the gallery, right click picks a random wallpaper.
+  wallpapers:
+    type: "yasb.wallpapers.WallpapersWidget"
+    options:
+      label: "<span>󰸉</span>"
+      image_path: "$env:USERPROFILE\\Pictures\\Wallpapers"
+      change_automatically: false
+      update_interval: 60
+      gallery:
+        image_width: 220
+        orientation: "portrait"
+        image_corner_radius: 20
+      keybindings:
+        - keys: "ctrl+alt+w"
+          action: "toggle_gallery"
+          # Opens on the focused window's monitor ("cursor" / "primary" also work).
+          screen: "active"
+
+  power_menu:
+    type: "yasb.power_menu.PowerMenuWidget"
+    options:
+      label: ""
+      uptime: true
+      blur: false
+      blur_background: true
+      animation_duration: 200
+      button_row: 5
+      buttons:
+        shutdown: ["", "Rage Quit"]
+        restart: ["", "Oops, Reboot"]
+        signout: ["󰍃", "Dip Out"]
+        hibernate: ["", "Bear Mode"]
+        sleep: ["⏾", "Nap Time"]
+        cancel: ["", "Nah, Im Good "]

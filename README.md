@@ -15,7 +15,7 @@ I'll actively update this repository as long as I keep using windows (cries in g
 | [fastfetch](./fastfetch) | [FastFetch](https://github.com/fastfetch-cli/fastfetch) |
 | [glazewm](./glazewm) | [GlazeWM](https://github.com/glzr-io/glazewm) |
 | [flowLauncher](./flowLauncher/) | [Flow Launcher](https://github.com/Flow-Launcher/Flow.Launcher) |
-| [zebar](./zebar) | [Zebar](https://github.com/glzr-io/zebar) |
+| [yasb](./yasb) | [YASB](https://github.com/amnweb/yasb) |
 | [wezterm](./wezterm) | [WezTerm](https://github.com/wez/wezterm) |
 | [omp](./omp) | [Oh My Posh](https://github.com/JanDeDobbeleer/oh-my-posh) |
 | [pwsh](./pwsh) | [PowerShell](https://github.com/PowerShell/PowerShell) |

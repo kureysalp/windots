@@ -20,7 +20,7 @@ $wingetPackages = @(
     @{ Id = "Microsoft.PowerShell";       Name = "PowerShell 7" }
     @{ Id = "Chocolatey.Chocolatey";      Name = "Chocolatey"   }
     @{ Id = "Flow-Launcher.Flow-Launcher"; Name = "Flow Launcher" }
-)
+    @{ Id = "AmN.yasb";                   Name = "YASB"         })
 
 $scoopPackages = @(
     @{ Name = "yazi"; Bucket = "main" }
@@ -28,6 +28,7 @@ $scoopPackages = @(
 
 $chocoPackages = @(
     "cascadia-code-nerd-font"
+    "nerd-fonts-JetBrainsMono"   # YASB icon font
 )
 
 # ── Functions ─────────────────────────────────────────────────────────────────
@@ -186,10 +187,12 @@ Link-File "$HomeDir/.config/tacky-borders/config.yaml" "$Dotfiles/tacky-borders/
 # VS Code
 Link-File "$HomeDir/AppData/Roaming/Code/User/keybindings.json" "$Dotfiles/vscode/keybindings.json"
 Link-File "$HomeDir/AppData/Roaming/Code/User/settings.json" "$Dotfiles/vscode/settings.json"
+# Wallpapers
+Link-Dir "$HomeDir/Pictures/Wallpapers" "$Dotfiles/wallpapers"
 # WezTerm
 Link-File "$HomeDir/.wezterm.lua" "$Dotfiles/wezterm/.wezterm.lua"
-# Zebar
-Link-File "$HomeDir/.glzr/zebar/settings.json" "$Dotfiles/zebar/settings.json"
+# YASB
+Link-Dir "$HomeDir/.config/yasb" "$Dotfiles/yasb"
 # Flow Launcher.
 Link-File "$HomeDir/AppData/Roaming/FlowLauncher/Settings/Settings.json" "$Dotfiles/flowLauncher/Settings.json"
 Link-File "$HomeDir/AppData/Roaming/FlowLauncher/Themes/tokyonight.xaml" "$Dotfiles/flowLauncher/tokyonight.xaml"

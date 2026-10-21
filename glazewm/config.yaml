@@ -1,12 +1,12 @@
 general:
   # Commands to run when the WM has started. This is useful for running a
   # script or launching another application.
-  # Example: The below command launches Zebar.
-  startup_commands: ['shell-exec zebar']
+  # Example: The below command launches YASB.
+  startup_commands: ['shell-exec yasb']
 
   # Commands to run just before the WM is shutdown.
-  # Example: The below command kills Zebar.
-  shutdown_commands: ['shell-exec taskkill /IM zebar.exe /F']
+  # Example: The below command stops YASB.
+  shutdown_commands: ['shell-exec yasbc stop']
 
   # Commands to run after the WM config is reloaded.
   config_reload_commands: []
@@ -137,8 +137,8 @@ window_rules:
       - window_process: { regex: "CrimsonDesert.exe"}
   - commands: ['ignore']
     match:
-      # Ignores any Zebar windows.
-      - window_process: { equals: 'zebar' }
+      # Ignores any YASB windows.
+      - window_process: { equals: 'yasb' }
 
       # Ignores picture-in-picture windows for browsers.
       - window_title: { regex: '[Pp]icture.in.[Pp]icture' }
