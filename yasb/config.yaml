@@ -58,6 +58,7 @@ bars:
         "volume",
         "cpu",
         "memory",
+        "claude_usage",
         "control_center",
         "wallpapers",
         "power_menu"
@@ -253,6 +254,42 @@ widgets:
         - "▆" # 60%
         - "▇" # 70%
         - "█" # 80%+
+
+  # https://github.com/amnweb/yasb/wiki/(Widget)-Claude-Usage
+  # Reuses the Claude Code login in ~/.claude/.credentials.json, no API key.
+  # Shows -- until you sign in to Claude Code.
+  claude_usage:
+    type: "yasb.claude_usage.ClaudeUsageWidget"
+    options:
+      # nf-md-creation. {stale} is a warning glyph while the OAuth token is
+      # expired (run any claude command to renew it), hidden otherwise.
+      label: "<span>󰙴</span> {five_hour}<span class='stale'>{stale}</span>"
+      label_alt: "<span>󰙴</span> 5h: {five_hour}% 7d: {seven_day}%<span class='stale'>{stale}</span>"
+      update_interval: 60
+      cache_ttl: 120
+      tooltip: true
+      callbacks:
+        on_left: "toggle_menu"
+        on_middle: "refresh"
+        on_right: "toggle_label"
+      # Token totals from local Claude Code transcripts, shown in the popup.
+      token_history:
+        enabled: true
+        default_period: "today"
+        show_graph: true
+        show_models: true
+      # status.claude.com indicator, popup header only.
+      status:
+        enabled: true
+        show_in_menu: true
+      menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
 
   # https://github.com/amnweb/yasb/wiki/(Widget)-Control-Center
   # Popup icons default to Segoe Fluent Icons (set in styles.css), the bar

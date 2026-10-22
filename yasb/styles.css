@@ -38,6 +38,8 @@
 .cpu-widget .icon,
 .memory-widget .label,
 .memory-widget .icon,
+.claude-usage .label,
+.claude-usage .icon,
 .glazewm-tiling-direction .btn {
     text-shadow: 1px 1px 3px black;
 }
@@ -710,3 +712,174 @@ Example: "Windows Media" becomes "windows-media" */
     border-radius: 2px;
     background-color: #89b4fa;
 }
+
+/* CLAUDE USAGE */
+/* Based on the wiki example, recoloured to the Catppuccin palette.
+   https://github.com/amnweb/yasb/wiki/(Widget)-Claude-Usage */
+.claude-usage .icon {
+    color: #fab387;
+    margin: 1px 2px 0 0;
+}
+.claude-usage .stale {
+    color: #f38ba8;
+    margin-left: 4px;
+}
+
+/* Popup, same panel as the control center */
+.claude-usage-menu {
+    background-color: rgba(30, 30, 46, 0.6);
+    min-width: 320px;
+}
+.claude-usage-menu .header {
+    padding: 14px 16px 10px 16px;
+}
+.claude-usage-menu .header .text {
+    color: #cdd6f4;
+    font-size: 15px;
+    font-weight: 600;
+}
+.claude-usage-menu .header .refresh,
+.claude-usage-menu .header .pin-btn {
+    color: #a6adc8;
+    font-size: 15px;
+    padding: 2px 4px;
+    margin-left: 4px;
+    border-radius: 6px;
+}
+/* pin_icon / unpin_icon are Segoe Fluent Icons glyphs */
+.claude-usage-menu .header .pin-btn {
+    font-family: "Segoe Fluent Icons";
+    font-weight: 400;
+}
+.claude-usage-menu .header .refresh:hover,
+.claude-usage-menu .header .pin-btn:hover {
+    color: #cdd6f4;
+    background-color: #313244;
+}
+.claude-usage-menu .header .pin-btn.pinned {
+    color: #89b4fa;
+}
+
+/* API status line (status.show_in_menu) */
+.claude-usage-menu .status-row {
+    padding: 0 16px 12px 16px;
+    border-bottom: 1px solid #313244;
+}
+.claude-usage-menu .status-row .dot {
+    font-size: 10px;
+    margin-right: 8px;
+}
+.claude-usage-menu .status-row .dot.none { color: #a6e3a1; }
+.claude-usage-menu .status-row .dot.minor { color: #f9e2af; }
+.claude-usage-menu .status-row .dot.major { color: #fab387; }
+.claude-usage-menu .status-row .dot.critical { color: #f38ba8; }
+.claude-usage-menu .status-row .dot.unknown { color: #6c7086; }
+.claude-usage-menu .status-row .status-text {
+    color: #a6adc8;
+    font-size: 12px;
+}
+
+/* 5-hour, 7-day and per-model weekly bars. The tokens section is last,
+   so it drops the separator against the popup's rounded bottom edge. */
+.claude-usage-menu .section {
+    padding: 14px 16px;
+    border-bottom: 1px solid #313244;
+}
+.claude-usage-menu .section.tokens {
+    border-bottom: none;
+}
+.claude-usage-menu .section .title {
+    color: #a6adc8;
+    font-size: 12px;
+    font-weight: 600;
+    padding-bottom: 8px;
+}
+.claude-usage-menu .progress {
+    background-color: #313244;
+    border-radius: 4px;
+    min-height: 8px;
+    max-height: 8px;
+}
+.claude-usage-menu .progress .fill {
+    background-color: #89b4fa;
+    border-radius: 4px;
+}
+.claude-usage-menu .progress.medium .fill { background-color: #f9e2af; }
+.claude-usage-menu .progress.high .fill { background-color: #f38ba8; }
+.claude-usage-menu .reset {
+    color: #a6adc8;
+    font-size: 12px;
+    padding-top: 8px;
+}
+.claude-usage-menu .percent {
+    color: #cdd6f4;
+    font-size: 13px;
+    font-weight: 600;
+    padding-top: 8px;
+}
+.claude-usage-menu .percent.medium { color: #f9e2af; }
+.claude-usage-menu .percent.high { color: #f38ba8; }
+.claude-usage-menu .date {
+    color: #6c7086;
+    font-size: 11px;
+    padding-top: 2px;
+}
+
+/* Token history (token_history.enabled) */
+.claude-usage-menu .section .period-toggle {
+    padding-bottom: 10px;
+}
+.claude-usage-menu .section .period-btn {
+    color: #a6adc8;
+    background-color: rgba(49, 50, 68, 0.6);
+    border: none;
+    border-radius: 6px;
+    padding: 4px 8px;
+    margin-right: 4px;
+    font-size: 12px;
+}
+.claude-usage-menu .section .period-btn:hover {
+    background-color: #45475a;
+}
+.claude-usage-menu .section .period-btn.active {
+    color: #1e1e2e;
+    background-color: #89b4fa;
+    font-weight: 600;
+}
+.claude-usage-menu .section .token-total {
+    color: #cdd6f4;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 2px 0 8px 0;
+}
+.claude-usage-menu .section .graph-container {
+    min-height: 60px;
+}
+
+/* Per-model breakdown (token_history.show_models). Fixed name and total
+   widths let the bar column stretch into the remaining space. */
+.claude-usage-menu .section.tokens .model-usage {
+    padding-bottom: 12px;
+}
+.claude-usage-menu .section.tokens .model-usage .title {
+    color: #a6adc8;
+}
+.claude-usage-menu .section.tokens .model-name {
+    color: #cdd6f4;
+    font-size: 12px;
+    min-width: 90px;
+}
+.claude-usage-menu .section.tokens .model-total {
+    color: #a6adc8;
+    font-size: 12px;
+    min-width: 48px;
+}
+.claude-usage-menu .section.tokens .model-rows .progress {
+    min-height: 6px;
+    max-height: 6px;
+}
+.claude-usage-menu .section.tokens .model-rows .progress.model-0 .fill { background-color: #89b4fa; }
+.claude-usage-menu .section.tokens .model-rows .progress.model-1 .fill { background-color: #cba6f7; }
+.claude-usage-menu .section.tokens .model-rows .progress.model-2 .fill { background-color: #a6e3a1; }
+.claude-usage-menu .section.tokens .model-rows .progress.model-3 .fill { background-color: #f9e2af; }
+.claude-usage-menu .section.tokens .model-rows .progress.model-4 .fill { background-color: #fab387; }
