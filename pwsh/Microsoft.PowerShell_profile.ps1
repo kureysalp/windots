@@ -18,8 +18,11 @@ if (Get-Command fastfetch -ErrorAction SilentlyContinue) {
 Set-Alias rename rename-item
 Set-Alias -Name clear -Value Invoke-ClearWithFetch -Force -Option AllScope
 Set-Alias y yazi
+Set-Alias ldir Get-Location
 
 # Functions
+
+function copydir { (Get-Location).Path | Set-Clipboard }
 
 function relp { . $PROFILE } # Reload Profile
 
